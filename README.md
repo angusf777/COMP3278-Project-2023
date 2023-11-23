@@ -1,6 +1,6 @@
 ## Intelligent course management system
 A course system that requires uid & face recognition for login, which then brings you to a interface that includes home, schedule and course page. 
-Group Project in COMP3278 2023, group of 5, I served as the front end and back end developer, mainly focusing on main and course page.
+Group Project in COMP3278 2023, group of 5, I served as both the front end and back end developer, mainly focusing on main and course page.
 
 ## Installation
 
