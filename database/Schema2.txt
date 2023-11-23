@@ -1,0 +1,35 @@
+Student(student_id, name, email)
+    Primary Key: student_id
+    Foreign Key: None
+
+Teacher(teacher_id, name, email)
+    Primary Key: teacher_id
+    Foreign Key: None
+
+Course(course_code, teacher_id, course_name, zoom_link, course_description)
+    Primary Key: course_code
+    Foreign Key: teacher_id referencing Teacher(teacher_id)
+
+Enrolled(student_id, course_code)
+    Primary Key: student_id, course_code
+    Foreign Key: student_id referencing Student(student_id), course_code referencing Course(course_code)
+
+Schedule(course_code, start_time, end_time, classroom)
+    Primary Key: course_code, start_time, end_time
+    Foreign Key: course_code referencing Course(course_code)
+
+CourseMaterialSection(course_code, group_id, group_name)
+    Primary Key: group_id, course_code
+    Foreign Key: course_code referencing Course(course_code)
+
+Material(course_code, group_id, material_id, material_name, link)
+    Primary Key: material_id, group_id, course_code
+    Foreign Key: course_code referencing Course(course_code), group_id referencing CourseMaterialSection(group_id)
+
+TeacherMessage(course_code, message_id, post_time, message)
+    Primary Key: message_id, course_code
+    Foreign Key: course_code referencing Course(course_code)
+
+LoginData(student_id, loginTime, logoutTime)
+    Primary Key: student_id, loginTime, logoutTime
+    Foreign Key: student_id referencing Student(student_id)
